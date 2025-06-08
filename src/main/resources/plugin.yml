@@ -1,0 +1,33 @@
+name: CrystalPowers
+main: com.crystalpowers.plugin.CrystalPowersPlugin
+version: 1.0.0
+author: YourName
+description: A Minecraft plugin that adds crystal-powered abilities and unique powers
+api-version: 1.19
+softdepend: []
+depend: []
+
+commands:
+  crystalpower:
+    description: Manage your crystal power
+    usage: /crystalpower [select|random|info|list|book]
+    aliases: [cp, power, crystal]
+  crystalreload:
+    description: Reload the Crystal Powers plugin configuration
+    usage: /crystalreload
+    permission: crystalpowers.admin
+  encryption:
+    description: Manage encryption settings for Crystal Powers plugin
+    usage: /encryption [status|enable|disable|generate-key|test|hash]
+    permission: crystalpowers.admin
+
+permissions:
+  crystalpowers.select:
+    description: Allows players to select a crystal power
+    default: true
+  crystalpowers.admin:
+    description: Allows access to admin commands
+    default: op
+  crystalpowers.bypass:
+    description: Bypass crystal power restrictions
+    default: op

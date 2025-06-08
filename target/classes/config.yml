@@ -1,0 +1,79 @@
+# Crystal Powers Plugin Configuration
+# Configure various aspects of the Crystal Powers plugin
+
+# General Settings
+general:
+  # Whether players must select a crystal power on first join
+  force_crystal_power_selection: true
+  
+  # Cooldown for changing crystal powers (in hours)
+  crystal_power_change_cooldown: 24
+  
+  # Whether to show crystal power selection GUI on first join
+  show_gui_on_join: true
+
+# Crystal Power Settings
+crystal_powers:
+  # Enable/disable specific crystal powers
+  enabled_powers:
+    human: true
+    avian: true
+    enderian: true
+    arachnid: true
+    merling: true
+    phantom: true
+  
+  # Custom crystal power properties (can be modified)
+  custom_properties:
+    avian:
+      max_health: 16
+      flight_enabled: true
+    enderian:
+      water_damage: true
+      night_vision: true
+    arachnid:
+      max_health: 16
+      wall_climbing: true
+    merling:
+      water_breathing: true
+      land_speed_multiplier: 0.8
+    phantom:
+      max_health: 14
+      sun_damage: true
+
+# Messages
+messages:
+  crystal_power_selected: "&aYou have selected the &6{power} &acrystal power!"
+  crystal_power_info_header: "&6=== {power} ==="
+  no_crystal_power_selected: "&cYou haven't selected a crystal power yet! Use /crystalpower to choose one."
+  crystal_power_change_cooldown: "&cYou can only change your crystal power once every 24 hours!"
+  invalid_crystal_power: "&cCrystal power '{power}' not found!"
+    reload_success: "&aCrystal Powers plugin has been reloaded!"
+  
+# GUI Settings
+gui:
+  title: "&5Choose Your Crystal Power"
+  size: 54
+  
+# Debug Settings
+debug:
+  enabled: true
+  log_crystal_power_changes: true
+  log_ability_usage: true
+
+# Security & Encryption Settings
+encryption:
+  # Enable encryption for player data (RECOMMENDED for production)
+  enabled: false
+  
+  # Master password for encryption (leave blank to auto-generate)
+  # WARNING: Keep this password safe! If lost, encrypted data cannot be recovered!
+  master-password: ""
+  
+  # Encryption algorithm details (DO NOT CHANGE unless you know what you're doing)
+  algorithm: "AES"
+  key_length: 256
+  
+  # Security features
+  secure_random_generation: true
+  hash_sensitive_data: true

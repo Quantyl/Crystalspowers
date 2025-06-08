@@ -1,0 +1,12 @@
+com\crystalpowers\plugin\listeners\PlayerListener.class
+com\crystalpowers\plugin\utils\EncryptionUtil.class
+com\crystalpowers\plugin\CrystalPowersPlugin.class
+com\crystalpowers\plugin\managers\CrystalPowerManager.class
+com\crystalpowers\plugin\models\CrystalPower.class
+com\crystalpowers\plugin\utils\JsonBuilder.class
+com\crystalpowers\plugin\commands\CrystalPowerCommand.class
+com\crystalpowers\plugin\models\CrystalPower$CrystalPowerProperties.class
+com\crystalpowers\plugin\commands\EncryptionCommand.class
+com\crystalpowers\plugin\models\PlayerData.class
+com\crystalpowers\plugin\gui\CrystalPowerBookGUI.class
+com\crystalpowers\plugin\managers\PlayerDataManager.class

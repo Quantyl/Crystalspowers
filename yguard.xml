@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<yguard>
+  <!-- Input and output JARs -->
+  <inoutpair>
+    <injar name="target/CrystalPowers-unobfuscated.jar"/>
+    <outjar name="target/CrystalPowers.jar"/>
+  </inoutpair>
+
+  <!-- Shrinking configuration -->
+  <shrink logfile="target/shrink.log">
+    <!-- Preserve essential plugin classes -->
+    <keep>
+      <class classes="public" name="com.crystalpowers.plugin.CrystalPowersPlugin"/>
+      <class classes="public" name="com.crystalpowers.plugin.commands.*"/>
+      <class classes="public" name="com.crystalpowers.plugin.listeners.*"/>
+      <class classes="public" name="com.crystalpowers.plugin.models.*"/>
+    </keep>
+  </shrink>
+
+  <!-- Renaming/Obfuscation configuration -->
+  <rename logfile="target/rename.log" 
+          conservemanifest="true" 
+          replaceClassNameStrings="true">
+    
+    <!-- Preserve plugin main class -->
+    <keep>
+      <class classes="public" methods="public" fields="public" name="com.crystalpowers.plugin.CrystalPowersPlugin"/>
+    </keep>
+
+    <!-- Preserve command executors -->
+    <keep>
+      <class classes="public" methods="public" name="com.crystalpowers.plugin.commands.*"/>
+    </keep>
+
+    <!-- Preserve event listeners -->
+    <keep>
+      <class classes="public" methods="public" name="com.crystalpowers.plugin.listeners.*"/>
+    </keep>
+
+    <!-- Preserve data models (for serialization) -->
+    <keep>
+      <class classes="public" methods="public" fields="public" name="com.crystalpowers.plugin.models.*"/>
+    </keep>
+
+    <!-- Obfuscate internal classes -->
+    <obfuscate>
+      <class classes="protected,package,private" 
+             methods="protected,package,private" 
+             fields="protected,package,private" 
+             name="com.crystalpowers.plugin.managers.*"/>
+      <class classes="protected,package,private" 
+             methods="protected,package,private" 
+             fields="protected,package,private" 
+             name="com.crystalpowers.plugin.utils.*"/>
+      <class classes="protected,package,private" 
+             methods="protected,package,private" 
+             fields="protected,package,private" 
+             name="com.crystalpowers.plugin.gui.*"/>
+    </obfuscate>
+
+    <!-- Preserve method and field signatures that might be accessed via reflection -->
+    <keep>
+      <method name="onEnable"/>
+      <method name="onDisable"/>
+      <method name="onCommand"/>
+      <method name="onTabComplete"/>
+    </keep>
+
+    <!-- Use mixed naming scheme for better obfuscation -->
+    <property name="naming-scheme" value="mix"/>
+    <property name="language-conformity" value="legal"/>
+    
+  </rename>
+</yguard>
